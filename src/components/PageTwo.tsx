@@ -33,7 +33,7 @@ const PageTwo: React.FunctionComponent<IPageTwoProps> = () => {
 
     return(
        <>
-        <PageTwoContainer>
+        <PageTwoContainer id='pagetwoscroll'>
             <PageTwoStyle>
            Page 1.2
             </PageTwoStyle>

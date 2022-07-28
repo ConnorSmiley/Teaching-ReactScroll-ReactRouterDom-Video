@@ -1,54 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 import { Link as LinkRouter } from 'react-router-dom'
-import {Link as LinkScroll} from 'react-scroll'
-
-
-
-
+import Page1Container from './Page1Container'
 
 const NavbarContainer = styled.div`
   ${tw`
     h-20
     w-screen
     bg-black
-    absolute
     flex
     items-center
     justify-center
-    
+    fixed
     `}
 `
 
 const NavbarStyle = styled.div`
+  max-width: 50em;
   ${tw`
   w-full
   z-10
-  text-white
+  text-gray-200
   font-bold
   flex
   flex-row
   justify-between
   text-2xl
-  px-20
- 
-    
     `}
 `
 
-export default function Navbar() {
+export default function Navbar({setClick}) {
 
   return (
     <>
       <NavbarContainer>
         <NavbarStyle>
-          <LinkRouter to='/'>Page1</LinkRouter>
-          <LinkScroll to='/' activeClass='active' to='/pageone' spy={true} smooth={true} offset={100}>1.1</LinkScroll>
-          <LinkRouter to='/page2'>Page2</LinkRouter>
-          <LinkRouter to='/page3'>Page3</LinkRouter>
-          <LinkRouter to='/page4'>Page4</LinkRouter>
-          <LinkRouter to='/page5'>Page5</LinkRouter>
+          <LinkRouter to='/'><Page1Container /></LinkRouter>
+          <LinkRouter onClick={()=>setClick(false)}  to='/page2'>Page2</LinkRouter>
+          <LinkRouter onClick={()=>setClick(false)} to='/page3'>Page3</LinkRouter>
+          <LinkRouter onClick={()=>setClick(false)} to='/page4'>Page4</LinkRouter>
+          <LinkRouter  onClick={()=>setClick(false)} to='/page5'>Page5</LinkRouter>
         </NavbarStyle>
       </NavbarContainer>
     </>
@@ -57,3 +49,4 @@ export default function Navbar() {
 
 
 
+//onClick={()=>setClick(false)}

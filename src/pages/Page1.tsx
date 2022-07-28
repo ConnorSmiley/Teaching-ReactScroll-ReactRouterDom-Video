@@ -31,16 +31,12 @@ const Page1Style = styled.div`
     `}
 `
 
-export interface IPage1Props {
-
-}
-
-const Page1: React.FunctionComponent<IPage1Props> = () => {
+export const Page1= () => {
 
   return (
     <>
-      <Page1Container>
-        <Page1Style>
+      <Page1Container >
+        <Page1Style id="/1" >
           page 1
         </Page1Style>
         <PageOne />
